@@ -49,10 +49,9 @@ jobs:
           region: ${{ env.REGION }}
           image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.SERVICE }}:${{ github.sha }}
           env_vars: |
-            CLOUD_SQL_USERNAME=production
-            CLOUD_SQL_PASSWORD=production
-            CLOUD_SQL_DATABASE_NAME=production
-            DB_LOCAL_HOST=production
-            CLOUD_SQL_CONNECTION_NAME=production
+            CLOUD_SQL_USERNAME=spotuserdb
+            CLOUD_SQL_PASSWORD=hackg11
+            CLOUD_SQL_DATABASE_NAME=spotmusicdb
+            DB_LOCAL_HOST=34.72.239.152
       - name: Show Output
         run: echo ${{ steps.deploy.outputs.url }}
